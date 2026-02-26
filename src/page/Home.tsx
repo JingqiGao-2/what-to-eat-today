@@ -7,8 +7,7 @@ import {
   Modal,
   Toast,
   Tabs,
-  Badge,
-  Stepper,
+  Badge
 } from "antd-mobile";
 import { CloseCircleOutline } from "antd-mobile-icons";
 import { foods, FoodItem } from "../data/food";
