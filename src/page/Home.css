@@ -1,0 +1,482 @@
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    sans-serif;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 0.8s ease;
+}
+
+.subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 8px;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Tabs 样式优化 */
+.adm-tabs {
+  /* --adm-color-primary: #fff; */
+  --adm-color-text: rgba(255, 255, 255, 0.8);
+  background: transparent !important;
+  margin-bottom: 15px;
+}
+
+.adm-tabs-tab {
+  font-size: 16px !important;
+  padding: 10px 0 !important;
+  transition: all 0.3s ease;
+}
+
+.adm-tabs-tab-active {
+  color: white !important;
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.adm-tabs-tab-line {
+  background: white !important;
+  height: 3px !important;
+  border-radius: 3px;
+}
+
+.adm-tabs-content {
+  padding: 15px 0 !important;
+  animation: fadeIn 0.5s ease;
+}
+
+/* 卡片样式 */
+.adm-card {
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 餐型选择器 */
+.meal-selector {
+  margin-bottom: 20px !important;
+}
+
+.meal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.meal-btn {
+  flex: 1;
+  min-width: 70px;
+  height: 40px !important;
+  border-radius: 25px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+.meal-btn.adm-button-default {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #666 !important;
+}
+
+.meal-btn.adm-button-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* 抽奖按钮 */
+.spin-button {
+  height: 60px !important;
+  font-size: 1.3rem !important;
+  border-radius: 30px !important;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: bold !important;
+  box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4) !important;
+  margin-bottom: 20px !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.spin-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  20%,
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.spin-button:active {
+  transform: scale(0.98);
+}
+
+.custom-spin {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%) !important;
+  box-shadow: 0 10px 25px rgba(255, 154, 158, 0.4) !important;
+}
+
+/* 抽奖池卡片 */
+.lottery-pool {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.pool-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.pool-items {
+  margin-top: 10px;
+  min-height: 40px;
+}
+
+.pool-items .adm-tag {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
+  transition: all 0.3s ease;
+}
+
+.pool-items .adm-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
+}
+
+.empty-pool {
+  text-align: center;
+  padding: 30px 20px;
+  color: #999;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 15px;
+}
+
+.empty-pool-tip {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #667eea;
+}
+
+/* 结果卡片 */
+.result-card {
+  animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.food-name {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 20px 0 15px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+
+.tags-container .adm-tag {
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: none !important;
+}
+
+/* 标签颜色 */
+.adm-tag.adm-tag-success {
+  background: linear-gradient(135deg, #a8e6cf 0%, #d4edda 100%) !important;
+  color: #155724 !important;
+}
+
+.adm-tag.adm-tag-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+}
+
+.adm-tag.adm-tag-warning {
+  background: linear-gradient(135deg, #ffd93e 0%, #f6c445 100%) !important;
+  color: #856404 !important;
+}
+
+.adm-tag.adm-tag-danger {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%) !important;
+  color: #721c24 !important;
+}
+
+.adm-tag.adm-tag-orange {
+  background: linear-gradient(135deg, #ffb347 0%, #ff8c00 100%) !important;
+  color: white !important;
+}
+
+/* 食材和描述样式 */
+.ingredients {
+  font-size: 15px;
+  color: #444;
+  margin: 15px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  line-height: 1.6;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  font-style: italic;
+  border-left: 4px solid #667eea;
+}
+
+/* 菜品详情弹窗 */
+.dish-detail {
+  padding: 15px;
+}
+
+.detail-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section strong {
+  color: #667eea;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.recipe-text {
+  white-space: pre-line;
+  line-height: 1.8;
+  color: #444;
+  font-size: 14px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+}
+
+/* 移除图标 */
+.remove-icon {
+  font-size: 16px;
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.remove-icon:hover {
+  transform: scale(1.2) rotate(90deg);
+  color: #ff7875;
+}
+
+/* 动画 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 加载动画 */
+.loading-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header {
+    margin-bottom: 20px;
+    padding: 15px 0;
+  }
+
+  .food-name {
+    font-size: 1.8rem;
+  }
+
+  .meal-btn {
+    min-width: 60px;
+    font-size: 13px !important;
+  }
+
+  .spin-button {
+    height: 50px !important;
+    font-size: 1.1rem !important;
+  }
+
+  .tags-container .adm-tag {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
