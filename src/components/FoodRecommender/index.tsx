@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Tag, Space, Button, Input, Grid, Badge } from "antd-mobile";
-import { CloseCircleOutline, CheckCircleOutline } from "antd-mobile-icons";
+import { CloseCircleOutline } from "antd-mobile-icons";
 import { foods, FoodItem, allIngredients } from "../../data/food";
 import "./index.css";
 
@@ -38,19 +38,6 @@ const FoodRecommender: React.FC<FoodRecommenderProps> = ({
     }
   }, [selectedIngredients]);
 
-  // 搜索菜品
-  const searchDishes = () => {
-    if (!searchText.trim()) return;
-
-    const searchLower = searchText.toLowerCase();
-    const matched = foods.filter(
-      (food: { name: string; tags: any[] }) =>
-        food.name.toLowerCase().includes(searchLower) ||
-        food.tags.some((tag) => tag.toLowerCase().includes(searchLower)),
-    );
-    setRecommendedFoods(matched);
-    setShowRecommendations(true);
-  };
 
   // 添加食材
   const addIngredient = (ingredient: string) => {

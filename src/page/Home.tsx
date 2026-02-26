@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -10,7 +10,7 @@ import {
   Badge,
   Stepper,
 } from "antd-mobile";
-import { CheckCircleOutline, CloseCircleOutline } from "antd-mobile-icons";
+import { CloseCircleOutline } from "antd-mobile-icons";
 import { foods, FoodItem } from "../data/food";
 import FoodRecommender from "../components/FoodRecommender";
 import "./Home.css";
