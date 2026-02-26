@@ -7,7 +7,7 @@ import {
   Modal,
   Toast,
   Tabs,
-  Badge
+  Badge,
 } from "antd-mobile";
 import { CloseCircleOutline } from "antd-mobile-icons";
 import { foods, FoodItem } from "../data/food";
@@ -238,9 +238,9 @@ const Home: React.FC = () => {
                   size="small"
                   onClick={() => setShowRecipe(true)}
                   style={
-                    { 
+                    {
                       color: "#333333",
-                      marginTop: "15px"
+                      marginTop: "15px",
                     } as React.CSSProperties
                   }
                 >
@@ -321,9 +321,9 @@ const Home: React.FC = () => {
                   size="small"
                   onClick={() => setShowRecipe(true)}
                   style={
-                    { 
+                    {
                       color: "#333333",
-                      marginTop: "15px"
+                      marginTop: "15px",
                     } as React.CSSProperties
                   }
                 >
