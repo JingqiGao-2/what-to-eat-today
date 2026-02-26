@@ -39,6 +39,19 @@ const FoodRecommender: React.FC<FoodRecommenderProps> = ({
   }, [selectedIngredients]);
 
 
+  // 搜索菜品
+  const searchDishes = () => {
+    if (!searchText.trim()) return;
+    
+    const searchLower = searchText.toLowerCase();
+    const matched = foods.filter(food => 
+      food.name.toLowerCase().includes(searchLower) ||
+      food.tags.some(tag => tag.toLowerCase().includes(searchLower))
+    );
+    setRecommendedFoods(matched);
+    setShowRecommendations(true);
+  };
+
   // 添加食材
   const addIngredient = (ingredient: string) => {
     if (!selectedIngredients.includes(ingredient)) {
@@ -177,19 +190,15 @@ const FoodRecommender: React.FC<FoodRecommenderProps> = ({
             </div>
           </>
         ) : (
-          <div className="ingredient-input">
+           <div className="dish-search">
             <Input
-              placeholder="输入食材名称（如：鸡蛋、番茄）"
+              placeholder="输入菜品名称或标签（如：川菜、下饭菜）"
               value={searchText}
               onChange={setSearchText}
-              onEnterPress={() => {
-                if (searchText && allIngredients.includes(searchText)) {
-                  addIngredient(searchText);
-                }
-              }}
+              onEnterPress={searchDishes}
               style={
                 {
-                  "--color": "#333333", // 覆盖颜色变量
+                  "--color": "#333333",
                   "--adm-color-text": "#333333",
                   "--adm-color-background": "#f8f9fc",
                   color: "#333333",
@@ -200,13 +209,9 @@ const FoodRecommender: React.FC<FoodRecommenderProps> = ({
             <Button
               color="primary"
               size="small"
-              onClick={() => {
-                if (searchText && allIngredients.includes(searchText)) {
-                  addIngredient(searchText);
-                }
-              }}
+              onClick={searchDishes}
             >
-              添加
+              搜索
             </Button>
           </div>
         )}
